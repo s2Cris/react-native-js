@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
-import { Text, View, Button, StyleSheet, Image } from 'react-native';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
+import AntDesign from '@expo/vector-icons/AntDesign';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
  
 export default function App() {
   const [imagemAB, setimagemAB] = useState(require('./src/Frieren.png'));
   const [imagemCD, setimagemCD] = useState(require('./src/Maomao.png'));
   const [imagemEF, setimagemEF] = useState(require('./src/Yor.png'));
+  const [imagemGH, setimagemGH] = useState(require('./src/Momo.png'));
   
   function alternarAB() {
     if (imagemAB === require('./src/Frieren.png')) {
@@ -30,6 +34,14 @@ export default function App() {
     }
   }
 
+  function alternarGH() {
+    if (imagemGH === require('./src/Momo.png')) {
+      setimagemGH(require('./src/Okarun.png'));
+    } else {
+      setimagemGH(require('./src/Momo.png'));
+    }
+  }
+
   return (
     <View style={styles.principal}>
       
@@ -38,19 +50,45 @@ export default function App() {
         <View style={styles.container1}>
           <Text style={styles.texto}>Frieren & Himmel</Text>
           <Image source={imagemAB} style={styles.img01} />
-          <Button title="Trocar Imagens" onPress={alternarAB} />
+          <TouchableOpacity styles={styles.TouchOpa01} onPress={alternarAB}>
+            <view style={styles.linha}>
+              <AntDesign name="cloud" size={25} color="#64afffff" />
+              <Text style={styles.Btntexto}>Trocar Imagens</Text>
+            </view>
+          </TouchableOpacity>
         </View>
 
         <View style={styles.container2}>
           <Text style={styles.texto}>Maomao & Jinshi</Text>
           <Image source={imagemCD} style={styles.img02} />
-          <Button title="Trocar Imagens" onPress={alternarCD} />
+          <TouchableOpacity styles={styles.TouchOpa02} onPress={alternarCD}>
+            <view style={styles.linha}>
+              <FontAwesome name="leaf" size={25} color="#16a31dc5" />
+              <Text style={styles.Btntexto}>Trocar Imagens</Text>
+            </view>
+          </TouchableOpacity>
         </View>
         
         <View style={styles.container3}>
           <Text style={styles.texto}>Yor & Loid</Text>
           <Image source={imagemEF} style={styles.img03} />
-          <Button title="Trocar Imagens" onPress={alternarEF} />
+          <TouchableOpacity styles={styles.TouchOpa03} onPress={alternarEF}>
+            <view style={styles.linha}>
+              <MaterialCommunityIcons name="knife-military" size={25} color="#3f3838ff" />
+              <Text style={styles.Btntexto}>Trocar Imagens</Text>
+            </view>
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.container4}>
+          <Text style={styles.texto}>Momo & Okarun</Text>
+          <Image source={imagemGH} style={styles.img04} />
+          <TouchableOpacity styles={styles.TouchOpa04} onPress={alternarGH}>
+            <view style={styles.linha}>
+              <AntDesign name="heart" size={25} color="#c75757ff" />
+              <Text style={styles.Btntexto}>Trocar Imagens</Text>
+            </view>
+          </TouchableOpacity>
         </View>
 
       </View>
@@ -63,7 +101,7 @@ export default function App() {
 const styles = StyleSheet.create({
   principal: {
     flex: 1,
-    backgroundColor: '#FF9999',
+    backgroundColor: '#a35e8eff',
     padding: 10,
     container1: {
       justifyContent: 'flex-start'
@@ -77,20 +115,20 @@ const styles = StyleSheet.create({
   },
   container1: {
     flex: 1,
-    backgroundColor: '#f8b195',
+    backgroundColor: '#cce5ff',
     alignItems: 'center',
     justifyContent: 'center',
     margin: 8,
-    borderRadius: 5,
+    borderRadius: 15,
     borderWidth: 2,
-    borderColor: '#f67280',
+    borderColor: '#515dc9ff',
     padding: 10,
     width: 100,
     height: 950,
   },
   container2: {
     flex: 1,
-    backgroundColor: '#cce5ff',
+    backgroundColor: '#86be2be3',
     alignItems: 'center',
     justifyContent: 'center',
     margin: 8,
@@ -103,7 +141,20 @@ const styles = StyleSheet.create({
   },
   container3: {
     flex: 1,
-    backgroundColor: '#b2f7ef',
+    backgroundColor: '#a7bdbaff',
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: 8,
+    borderRadius: 15,
+    borderWidth: 2,
+    borderColor: '#355c7d',
+    padding: 5,
+    width: 100,
+    height: 950,
+  },
+  container4: {
+    flex: 1,
+    backgroundColor: '#e7b1eeff',
     alignItems: 'center',
     justifyContent: 'center',
     margin: 8,
@@ -115,10 +166,19 @@ const styles = StyleSheet.create({
     height: 950,
   },
   texto: {
-    fontSize: 22,
+    fontSize: 23,
     fontWeight: 'bold',
     marginBottom: 10,
     color: '#355c7d',
+    textAlign: 'center',
+  },
+  Btntexto: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    marginBottom: 10,
+    marginLeft: 8,
+    marginTop: 2,
+    color: '#083257ff',
     textAlign: 'center',
   },
   row: {
@@ -129,13 +189,13 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   img01: {
-    width: 553,
-    height: 680,
+    width: 275,
+    height: 750,
     marginBottom: 5,
     borderRadius: 5,
     borderWidth: 2,
     alignItems: 'center',
-    borderColor: '#f67280',
+    borderColor: '#515dc983',
   },
   img02: {
     width: 334,
@@ -143,15 +203,54 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     borderRadius: 10,
     borderWidth: 2,
-    borderColor: '#6c5b7b',
+    borderColor: '#6c5b7b75',
   },
   img03: {
     width: 325,
-    height: 797,
+    height: 780,
     marginBottom: 10,
     borderRadius: 10,
     borderWidth: 2,
+    borderColor: '#355b7d83',
+  },
+  img04: {
+    width: 325,
+    height: 790,
+    marginBottom: 10,
+    borderRadius: 10,
+    borderWidth: 2,
+    borderColor: '#355b7d79',
+  },
+  TouchOpa01: {
+    backgroundColor: '#c4b5afff',
+    padding: 10,
+    borderRadius: 5,
+    borderWidth: 2,
+    borderColor: '#515dc9ff',
+  },
+  TouchOpa02: {
+    backgroundColor: '#cce5ff',
+    padding: 10,
+    borderRadius: 5,
+    borderWidth: 2,
+    borderColor: '#6c5b7b',
+  },
+  TouchOpa03: {
+    backgroundColor: '#b2f7ef',
+    padding: 10,
+    borderRadius: 5,
+    borderWidth: 2,
     borderColor: '#355c7d',
+  },
+  TouchOpa04: {
+    backgroundColor: '#b2f7ef',
+    padding: 10,
+    borderRadius: 5,
+    borderWidth: 2,
+    borderColor: '#355c7d',
+  },
+  linha: {
+    flexDirection: 'row',
   },
 });
 
