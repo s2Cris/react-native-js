@@ -7,40 +7,40 @@ export default function Fotos() {
     
     const navegacao = useNavigation();
     
-    const [imagemAB, setimagemAB] = useState(require('./src/Frieren.png'));
-    const [imagemCD, setimagemCD] = useState(require('./src/Maomao.png'));
-    const [imagemEF, setimagemEF] = useState(require('./src/Yor.png'));
-    const [imagemGH, setimagemGH] = useState(require('./src/Momo.png'));
+    const [imagemAB, setimagemAB] = useState(require('./assets/Frieren.png'));
+    const [imagemCD, setimagemCD] = useState(require('./assets/Maomao.png'));
+    const [imagemEF, setimagemEF] = useState(require('./assets/Yor.png'));
+    const [imagemGH, setimagemGH] = useState(require('./assets/Momo.png'));
     
     function alternarAB() {
-        if (imagemAB === require('./src/Frieren.png')) {
-            setimagemAB(require('./src/Himmel.png'));
+        if (imagemAB === require('./assets/Frieren.png')) {
+            setimagemAB(require('./assets/Himmel.png'));
         } else {
-            setimagemAB(require('./src/Frieren.png'));
+            setimagemAB(require('./assets/Frieren.png'));
         }
     }
     
     function alternarCD() {
-        if (imagemCD === require('./src/Maomao.png')) {
-            setimagemCD(require('./src/Jinshi.png'));
+        if (imagemCD === require('./assets/Maomao.png')) {
+            setimagemCD(require('./assets/Jinshi.png'));
         } else {
-            setimagemCD(require('./src/Maomao.png'));
+            setimagemCD(require('./assets/Maomao.png'));
         }
     }
     
     function alternarEF() {
-        if (imagemEF === require('./src/Yor.png')) {
-            setimagemEF(require('./src/Loid.png'));
+        if (imagemEF === require('./assets/Yor.png')) {
+            setimagemEF(require('./assets/Loid.png'));
         } else {
-            setimagemEF(require('./src/Yor.png'));
+            setimagemEF(require('./assets/Yor.png'));
         }
     }
     
     function alternarGH() {
-        if (imagemGH === require('./src/Momo.png')) {
-            setimagemGH(require('./src/Okarun.png'));
+        if (imagemGH === require('./assets/Momo.png')) {
+            setimagemGH(require('./assets/Okarun.png'));
         } else {
-            setimagemGH(require('./src/Momo.png'));
+            setimagemGH(require('./assets/Momo.png'));
         }
     }
 
