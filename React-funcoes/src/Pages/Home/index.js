@@ -9,7 +9,9 @@ export default function Home() {
     return (
         <View style={styles.container}>
             <Text>Home</Text>
-            <TouchableOpacity title="Ir para Fotos" onPress={() => navegacao.navigate('Fotos')}></TouchableOpacity>
+            <TouchableOpacity title="Ir para Fotos" onPress={() => navegacao.navigate('Fotos')} >
+                <Text>Ir para Fotos</Text>
+            </TouchableOpacity>
         </View>
     );
 }

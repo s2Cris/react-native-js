@@ -46,69 +46,66 @@ export default function Fotos() {
 
     return (
         <View style={styles.principal}>
+          
+          <FontAwesome name="home" size={30} color="#900" style={{ marginRight: 10 }} />
+          <Text>Fotos</Text>
+          <TouchableOpacity title="Voltar para Home" onPress={() => navegacao.navigate('Home')}>
+              <Text>Voltar para Home</Text>
+          </TouchableOpacity>
+          
+          <View style={styles.row}>
             
-            <FontAwesome name="home" size={30} color="#900" style={{ marginRight: 10 }} />
-            <Text>Fotos</Text>
-            <TouchableOpacity title="Voltar para Home" onPress={() => navegacao.navigate('Home')}>
-                <Text>Voltar para Home</Text>
-            </TouchableOpacity>
-
-            <View style={styles.row}>
-                
             <View style={styles.container1}>
-                <Text style={styles.texto}>Frieren & Himmel</Text>
-                <Image source={imagemAB} style={styles.img01} />
-                <TouchableOpacity styles={styles.TouchOpa01} onPress={alternarAB}>
-                    <view style={styles.linha}>
-                        <AntDesign name="cloud" size={25} color="#64afffff" />
-                        <Text style={styles.Btntexto}>Trocar Imagens</Text>
-                    </view>
-                </TouchableOpacity>
+              <Text style={styles.texto}>Frieren & Himmel</Text>
+              <Image source={imagemAB} style={styles.img01} />
+              <TouchableOpacity styles={styles.TouchOpa01} onPress={alternarAB}>
+                <view style={styles.linha}>
+                  <AntDesign name="cloud" size={25} color="#64afffff" />
+                  <Text style={styles.Btntexto}>Trocar Imagens</Text>
+                </view>
+              </TouchableOpacity>
             </View>
 
             <View style={styles.container2}>
-                <Text style={styles.texto}>Maomao & Jinshi</Text>
-                <Image source={imagemCD} style={styles.img02} />
-                <TouchableOpacity styles={styles.TouchOpa02} onPress={alternarCD}>
-                    <view style={styles.linha}>
-                        <FontAwesome name="leaf" size={25} color="#16a31dc5" />
-                        <Text style={styles.Btntexto}>Trocar Imagens</Text>
-                    </view>
-                </TouchableOpacity>
+              <Text style={styles.texto}>Maomao & Jinshi</Text>
+              <Image source={imagemCD} style={styles.img02} />
+              <TouchableOpacity styles={styles.TouchOpa02} onPress={alternarCD}>
+                <view style={styles.linha}>
+                  <FontAwesome name="leaf" size={25} color="#16a31dc5" />
+                  <Text style={styles.Btntexto}>Trocar Imagens</Text>
+                </view>
+              </TouchableOpacity>
             </View>
+            
+            <View style={styles.container3}>
+              <Text style={styles.texto}>Yor & Loid</Text>
+              <Image source={imagemEF} style={styles.img03} />
+              <TouchableOpacity styles={styles.TouchOpa03} onPress={alternarEF}>
+                <view style={styles.linha}>
+                  <MaterialCommunityIcons name="knife-military" size={25} color="#3f3838ff" />
+                  <Text style={styles.Btntexto}>Trocar Imagens</Text>
+                </view>
+              </TouchableOpacity>
+            </View>
+
+            <View style={styles.container4}>
+              <Text style={styles.texto}>Momo & Okarun</Text>
+              <Image source={imagemGH} style={styles.img04} />
+              <TouchableOpacity styles={styles.TouchOpa04} onPress={alternarGH}>
+                <view style={styles.linha}>
+                  <AntDesign name="heart" size={25} color="#c75757ff" />
+                  <Text style={styles.Btntexto}>Trocar Imagens</Text>
+                </view>
+              </TouchableOpacity>
+            </View>
+            
+          </View>
         
-        <View style={styles.container3}>
-                <Text style={styles.texto}>Yor & Loid</Text>
-                <Image source={imagemEF} style={styles.img03} />
-                <TouchableOpacity styles={styles.TouchOpa03} onPress={alternarEF}>
-                    <view style={styles.linha}>
-                        <MaterialCommunityIcons name="knife-military" size={25} color="#3f3838ff" />
-                        <Text style={styles.Btntexto}>Trocar Imagens</Text>
-                    </view>
-                </TouchableOpacity>
         </View>
 
-        <View style={styles.container4}>
-                <Text style={styles.texto}>Momo & Okarun</Text>
-                <Image source={imagemGH} style={styles.img04} />
-                <TouchableOpacity styles={styles.TouchOpa04} onPress={alternarGH}>
-                    <view style={styles.linha}>
-                        <AntDesign name="heart" size={25} color="#c75757ff" />
-                        <Text style={styles.Btntexto}>Trocar Imagens</Text>
-                    </view>
-                </TouchableOpacity>
-        </View>
-
-        
-        </View>
-        
-        </View>
-
-        
-        
     );
-    
-}
+  
+  }
 
 const styles = StyleSheet.create({
   principal: {
