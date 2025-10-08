@@ -1,21 +1,24 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, Image} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 export default function Home() {
+
     const navegacao = useNavigation();
-    const localImage = require('../assets/welcome.png');
 
     return (
         <View style={styles.container}>
 
             <View style={styles.Header}>
-                <Text style={styles.title}>Tela HOME</Text>
-                <Button title='Ir para Fotos' onPress={() => navegacao.navigate('Fotos')} /> 
+                <Text style={styles.title}>HOME</Text>
+                <Button title='Ir para Fotos' onPress={() => navegacao.navigate('Fotos')} />
+                <Button title='Ir para Cadastro' onPress={() => navegacao.navigate('Cadastro')} />
+                <Button title='Ir para Localização' onPress={() => navegacao.navigate('Localizacao')} />
             </View>
 
             <View style={styles.content}>
-                <Image source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }} 
+                <Image
+                source={require('./img/funnyhouse.png')}
                 style={styles.image}
                 />
                 <Text style={styles.Text}>Bem-vindo ao App!</Text>
@@ -33,8 +36,9 @@ const styles = StyleSheet.create({
     },
     Header: {
         width: '100%',
-        marginTop: 60,
+        marginTop: 40,
         alignItems: 'center',
+        gap: 10,
     },
     title: {
         fontSize: 26,
@@ -48,12 +52,16 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     Text: {
-        fontSize: 20,
+        fontSize: 30,
         color: '#444',
+        fontWeight: 'bold',
     },
-    image: { 
-        width: 180, 
-        height: 180, 
-        marginBottom: 20 
+    image: {
+        width: 220,
+        height: 220,
+        borderRadius: 110,
+        borderWidth: 3,
+        borderColor: '#1a3d7c',
+        marginBottom: 20,
     },
 });
